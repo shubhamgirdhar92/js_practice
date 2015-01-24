@@ -1,0 +1,52 @@
+$(document).ready(function(){
+	$('#vella1').click(function(){
+		var value=$.trim($("#vella").val());
+		if(value.length>0)
+		{
+			var nameInput = document.getElementById('vella');
+
+			document.querySelector('form').addEventListener('submit', function (e) {
+
+    		//prevent the normal submission of the form
+    		e.preventDefault();
+
+    		console.log(nameInput.value);    
+			});
+		}
+		else{
+		alert("no reviews entered");
+	}
+	});
+	$('.btn').click(function(){
+		bootbox.prompt("enter field 1 for the table",function(res){
+			if(res== null){
+				alert("empty field!!!");
+			}else{
+			$('.table1').append('<tr><th>'+res+'</th></tr>');
+		}
+		});
+		//$('.table1').append('<tr><th>'+'serial no.'+'</th>'+'<th>'+'Algorithms'+'</th></tr>');
+	});
+	$(".remove"	).click(function(){
+		$('.table1').remove();
+	});
+});
+
+/*var value=$.trim($("#vella1").val());
+		if(value.length<0)
+		{
+			prompt("No reviews entered!!! can't submit");
+		}
+
+
+else{
+			var nameInput = document.getElementById('vella');
+
+			document.querySelector('form').addEventListener('submit', function (e) {
+
+    		//prevent the normal submission of the form
+    		e.preventDefault();
+
+    		console.log(nameInput.value);    
+			});
+		}*/
